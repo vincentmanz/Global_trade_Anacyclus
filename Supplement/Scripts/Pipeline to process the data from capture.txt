@@ -1,0 +1,55 @@
+Pipeline to process the data from capture. 
+
+
+From the alleles
+
+#have a folder with only the alleles called: 0_alleles
+
+
+#1. from alleles to matrices 
+mkdir 1_gene_matrix
+cd 0_alleles
+python make_gene_matrix.py
+cd ../1_gene_matrix
+
+#2.Remove N
+for i in $(ls *.fa); do cat $i | sed 's/n/-/'| sed 's/N/-/'; done
+
+#3. align matrices 
+mkdir ../3_aligned_matrices
+for i in $(ls *.fa); do muscle -in $i -out ../3_aligned_matrices; done
+
+#4.run gblocks
+mkdir ../4_gblock
+cd ../4_gblock
+for i in $(../3_aligned_matrices/*.fa); do gblocks $I -t d -b4 20 -b5 h 
+
+#5. change the sequence name
+python rename_multifasta_with_new_header.py 
+#need new_name.list
+
+#6. Missing data per samples and per markers 
+python counting_number_of_missing_data_accross_matrices_3.py
+#check output: 
+#	mean_per_markers.csv 
+#	mean_per_samples.csv
+#select the samples, i.e. 5% of missing data
+
+#7. make the subset
+mkdir ../5_selected_samples
+for i in $(ls *.fasta); do seqtk subseq $i list_header_sequences > ../5_selected_samples; done
+
+#8. make gene trees (array job)
+	 -T 4 -m GTRGAMMA -f a -x 12345 -p 12345 -# 100 -s ../"$IN" -n $OUT
+
+#.9 astral
+java -jar ~/nobackup/ASTRAL-master/astral.5.5.5.jar -i all.tree -o astral_multi_individual.tre -b path_to_bootstrap_tree.list  --namemapfile mappingfile
+# do not forget to make the mapping file. 
+
+#10. phylonetworks
+julia phylonetworks.jl
+#!be patient!!! it takes a long long time to compute. 
+
+
+
+
