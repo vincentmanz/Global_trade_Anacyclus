@@ -22,44 +22,13 @@ Keywords: *Anacyclus*, DNA barcoding, genomic barcoding, international trade, su
 <br> 
 
 <center>
-![trade routes](https://github.com/vincentmanz/scientific_articles/blob/main/Global_trade_Anacyclus/Figure%203-6/Figure%206%20-%20Origin%20of%20the%20samples%204%20cases.png)
+![trade routes](https://github.com/vincentmanz/Global_trade_Anacyclus/blob/main/Figure%203-6/Figure%206%20-%20Origin%20of%20the%20samples%204%20cases.png)
 *Figure: Trade routes of Anacyclus.*
 </center>
 
 <br> 
 
 <center>
-![trade routes](https://github.com/vincentmanz/scientific_articles/blob/main/Global_trade_Anacyclus/Figure%202/Box%20plot%20Number%20of%20reads%20per%20samples.png)
+![trade routes](https://github.com/vincentmanz/Global_trade_Anacyclus/blob/main/Figure%202/Box%20plot%20Number%20of%20reads%20per%20samples.png)
 *Figure: Marker coverage.*
 </center>
-
----
-title: "Untitled"
-output: github_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
