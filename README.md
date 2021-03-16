@@ -10,8 +10,12 @@ here**](https://www.biorxiv.org/content/10.1101/744318v2)
 
 </center>
 
-<br> \#\# Authors **Vincent Manzanilla**, Irene Teixidor-Toneu, Gary J.
-Martin, Peter M. Hollingsworth, Hugo J. de Boer, Anneleen Kool
+<br> 
+
+## Authors 
+
+**Vincent Manzanilla**, Irene Teixidor-Toneu, Gary J.
+Martin, Peter M. Hollingsworth, Hugo J. de Boer, Anneleen Kool  
 
 ## Abstract
 
